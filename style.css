@@ -1,0 +1,337 @@
+/* ------------------------
+   BASIC RESET
+------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------
+   GLOBAL STYLES
+------------------------- */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f6f8;
+    color: #333;
+}
+
+/* ------------------------
+   HEADER SECTION
+------------------------- */
+.header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background: #34495e;
+}
+
+/* ------------------------
+   MAIN CONTENT
+------------------------- */
+.main-content {
+    background: white;
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ------------------------
+   WELCOME SECTION
+------------------------- */
+.welcome-section {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+.welcome-section h1 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.welcome-section p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* ------------------------
+   DEMO ACCOUNT SECTION
+------------------------- */
+.demo-accounts {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-left: 5px solid #3498db;
+    border-radius: 5px;
+    margin: 25px 0;
+}
+
+.demo-accounts h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.demo-accounts p {
+    margin: 5px 0;
+    color: #333;
+}
+
+/* ------------------------
+   TABLE STYLING
+------------------------- */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.data-table th, 
+.data-table td {
+    border: 1px solid #ddd;
+    padding: 12px 10px;
+    text-align: left;
+}
+
+.data-table th {
+    background: #2c3e50;
+    color: white;
+    font-weight: bold;
+}
+
+.data-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.data-table tr:hover {
+    background: #f1f1f1;
+}
+
+.student-id {
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* ------------------------
+   COURSE BADGES
+------------------------- */
+.course-badge {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin: 3px;
+    transition: background 0.3s;
+}
+
+.course-badge:hover {
+    background: #2980b9;
+}
+
+/* ------------------------
+   FOOTER
+------------------------- */
+.footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+}
+
+/* ------------------------
+   RESPONSIVE DESIGN
+------------------------- */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        margin: 5px 0;
+        display: inline-block;
+    }
+
+    .main-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .data-table th, .data-table td {
+        font-size: 0.9rem;
+    }
+
+    .welcome-section h1 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* ------------------------
+   FORM CONTAINER
+------------------------- */
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    margin: 50px auto;
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    /* Keep the form container centered */
+    text-align: left; /* change from center to left */
+}
+
+/* FORM TITLE */
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    text-align: center; /* keep the heading centered */
+}
+
+/* INPUT FIELDS */
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s, box-shadow 0.3s;
+    display: block;
+}
+
+/* LABELS */
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* BUTTON */
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.form-container button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* MESSAGE */
+.form-container .message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* LINKS */
+.form-container p {
+    font-size: 0.9rem;
+    margin-top: 15px;
+    text-align: center; /* keep links centered */
+}
+
+.form-container a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 25px 15px;
+        margin: 30px 10px;
+    }
+
+    .form-container h2 {
+        font-size: 1.5rem;
+    }
+}
+/* ------------------------
+   FORM ALIGNMENT FIX
+------------------------- */
+
+/* Make form labels left-aligned */
+.form-container label {
+    display: block;
+    text-align: left;
+}
+
+/* Make inputs fully stretch but aligned left */
+.form-container input,
+.form-container select {
+    display: block;
+    text-align: left; /* ensures placeholder text is left-aligned */
+}
+
+/* Optional: Adjust placeholder alignment */
+.form-container input::placeholder,
+.form-container select::placeholder {
+    text-align: left;
+}
