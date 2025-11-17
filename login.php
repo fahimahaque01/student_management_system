@@ -1,7 +1,6 @@
 <?php
 require_once 'config.php';
 
-
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -15,7 +14,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($result && mysqli_num_rows($result) === 1) {
             $user = mysqli_fetch_assoc($result);
 
-            if (password_verify($password, $user['password'])) {
+            // Debug: Check what's happening
+            // echo "DB Password: " . $user['password'] . "<br>";
+            // echo "Input Password: " . $password . "<br>";
+            
+            // Check if password matches plain text OR hashed
+            if ($user['password'] === $password || password_verify($password, $user['password'])) {
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['role'] = $user['role'];
@@ -53,6 +57,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </form>
 
     <p>Don't have an account? <a href="register.php">Register here</a></p>
+
+    <!-- Demo Accounts Info -->
+    <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+        <h4>Demo Accounts:</h4>
+        <p><strong>Admin:</strong> admin / 123456</p>
+        <p><strong>Teacher:</strong> teacher / 123456</p>
+        <p><strong>Student:</strong> fahima / 123456</p>
+    </div>
 </div>
 
 <?php include 'includes/footer.php'; ?>

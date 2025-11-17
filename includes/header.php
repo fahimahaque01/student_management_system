@@ -1,24 +1,33 @@
-
+<?php
+// Check if user is logged in
+$is_logged_in = isset($_SESSION['user_id']);
+$user_role = isset($_SESSION['role']) ? $_SESSION['role'] : '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Management System</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    
-    <header class="header">
-        <div class="container nav">
-            <div class="logo">Student Management System</div>
-            <nav class="nav-links">
-                <a href="index.php">Home</a>
-                <a href="register.php">Register</a>
-                <a href="login.php">Login</a>
-            </nav>
+    <div class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">Student Management System</div>
+                <div class="nav-links">
+                    <a href="index.php">Home</a>
+                    <?php if ($is_logged_in): ?>
+                        <?php if ($user_role == 'admin'): ?>
+                            <a href="admin_dashboard.php">Admin Dashboard</a>
+                        <?php endif; ?>
+                        <a href="logout.php">Logout (<?php echo $_SESSION['username']; ?>)</a>
+                    <?php else: ?>
+                        <a href="login.php">Login</a>
+                        <a href="register.php">Register</a>
+                    <?php endif; ?>
+                </div>
+            </div>
         </div>
-    </header>
-
-    <main class="main-content">
+    </div>

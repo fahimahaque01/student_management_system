@@ -1,10 +1,8 @@
-<?php
-// includes/footer.php
-?>
-    </main>
+</div> <!-- MAIN CONTENT END -->
 
-    <footer class="footer">
-        
-    </footer>
+<footer class="footer">
+   
+</footer>
+
 </body>
 </html>
