@@ -21,6 +21,10 @@ $user_role = isset($_SESSION['role']) ? $_SESSION['role'] : '';
                     <?php if ($is_logged_in): ?>
                         <?php if ($user_role == 'admin'): ?>
                             <a href="admin_dashboard.php">Admin Dashboard</a>
+                        <?php elseif ($user_role == 'teacher'): ?>
+                            <a href="teacher_dashboard.php">Teacher Dashboard</a>
+                        <?php elseif ($user_role == 'student'): ?>
+                            <a href="student_dashboard.php">Student Dashboard</a>
                         <?php endif; ?>
                         <a href="logout.php">Logout (<?php echo $_SESSION['username']; ?>)</a>
                     <?php else: ?>
