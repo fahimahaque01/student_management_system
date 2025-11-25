@@ -35,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['update_course'])) {
     $course_name = trim($_POST['course_name']);
     $credits = trim($_POST['credits']);
     $description = trim($_POST['description']);
+    $teacher_id = $_POST['teacher_id'] ? $_POST['teacher_id'] : 'NULL';
 
     if ($course_code && $course_name) {
         // Check if course code already exists (excluding current course)
@@ -46,7 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['update_course'])) {
                             course_code = '$course_code', 
                             course_name = '$course_name', 
                             credits = $credits, 
-                            description = '$description' 
+                            description = '$description',
+                            teacher_id = $teacher_id 
                             WHERE id = $course_id";
             
             if (mysqli_query($pdo, $update_query)) {
@@ -94,6 +96,22 @@ include 'includes/header.php';
                 <div class="form-group">
                     <label>Description</label>
                     <textarea name="description" rows="3"><?php echo htmlspecialchars($course['description']); ?></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Assign Teacher</label>
+                    <select name="teacher_id">
+                        <option value="">Select Teacher</option>
+                        <?php
+                        $teachers_query = mysqli_query($pdo, "SELECT id, full_name FROM users WHERE role='teacher'");
+                        while ($teacher = mysqli_fetch_assoc($teachers_query)) {
+                            $selected = ($teacher['id'] == $course['teacher_id']) ? 'selected' : '';
+                            echo "<option value='{$teacher['id']}' $selected>{$teacher['full_name']}</option>";
+                        }
+                        ?>
+                    </select>
                 </div>
             </div>
 
