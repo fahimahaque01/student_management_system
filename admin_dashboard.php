@@ -23,6 +23,9 @@ include 'includes/header.php';
         <a href="manage_courses.php" class="dashboard-link">
              Manage Courses
         </a>
+        <a href="manage_enrollments.php" class="dashboard-link">
+             Manage Enrollments
+        </a>
         <a href="index.php" class="dashboard-link">
              View All Students & Courses
         </a>
